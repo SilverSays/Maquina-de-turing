@@ -1,0 +1,217 @@
+{
+  "Ejemplo - a^n b^n": {
+    "states": [
+      "q0",
+      "q1",
+      "q2",
+      "q3",
+      "qf"
+    ],
+    "input_alphabet": [
+      "a",
+      "b"
+    ],
+    "tape_alphabet": [
+      "X",
+      "Y",
+      "^",
+      "a",
+      "b"
+    ],
+    "blank_symbol": "^",
+    "initial_state": "q0",
+    "final_states": [
+      "qf"
+    ],
+    "input_word": "aabba",
+    "transitions": [
+      {
+        "from": "q0",
+        "read": "Y",
+        "to": "q3",
+        "write": "Y",
+        "move": "R"
+      },
+      {
+        "from": "q0",
+        "read": "^",
+        "to": "qf",
+        "write": "^",
+        "move": "S"
+      },
+      {
+        "from": "q0",
+        "read": "a",
+        "to": "q1",
+        "write": "X",
+        "move": "R"
+      },
+      {
+        "from": "q1",
+        "read": "Y",
+        "to": "q1",
+        "write": "Y",
+        "move": "R"
+      },
+      {
+        "from": "q1",
+        "read": "a",
+        "to": "q1",
+        "write": "a",
+        "move": "R"
+      },
+      {
+        "from": "q1",
+        "read": "b",
+        "to": "q2",
+        "write": "Y",
+        "move": "L"
+      },
+      {
+        "from": "q2",
+        "read": "X",
+        "to": "q0",
+        "write": "X",
+        "move": "R"
+      },
+      {
+        "from": "q2",
+        "read": "Y",
+        "to": "q2",
+        "write": "Y",
+        "move": "L"
+      },
+      {
+        "from": "q2",
+        "read": "a",
+        "to": "q2",
+        "write": "a",
+        "move": "L"
+      },
+      {
+        "from": "q3",
+        "read": "Y",
+        "to": "q3",
+        "write": "Y",
+        "move": "R"
+      },
+      {
+        "from": "q3",
+        "read": "^",
+        "to": "qf",
+        "write": "^",
+        "move": "S"
+      }
+    ]
+  },
+  "Ejemplo - incremento binario": {
+    "states": [
+      "q0",
+      "q1",
+      "qf"
+    ],
+    "input_alphabet": [
+      "0",
+      "1"
+    ],
+    "tape_alphabet": [
+      "0",
+      "1",
+      "^"
+    ],
+    "blank_symbol": "^",
+    "initial_state": "q0",
+    "final_states": [
+      "qf"
+    ],
+    "input_word": "1011",
+    "transitions": [
+      {
+        "from": "q0",
+        "read": "0",
+        "to": "q0",
+        "write": "0",
+        "move": "R"
+      },
+      {
+        "from": "q0",
+        "read": "1",
+        "to": "q0",
+        "write": "1",
+        "move": "R"
+      },
+      {
+        "from": "q0",
+        "read": "^",
+        "to": "q1",
+        "write": "^",
+        "move": "L"
+      },
+      {
+        "from": "q1",
+        "read": "0",
+        "to": "qf",
+        "write": "1",
+        "move": "S"
+      },
+      {
+        "from": "q1",
+        "read": "1",
+        "to": "q1",
+        "write": "0",
+        "move": "L"
+      },
+      {
+        "from": "q1",
+        "read": "^",
+        "to": "qf",
+        "write": "1",
+        "move": "S"
+      }
+    ]
+  },
+  "Ejemplo - complemento de bits": {
+    "states": [
+      "q0",
+      "qf"
+    ],
+    "input_alphabet": [
+      "0",
+      "1"
+    ],
+    "tape_alphabet": [
+      "0",
+      "1",
+      "^"
+    ],
+    "blank_symbol": "^",
+    "initial_state": "q0",
+    "final_states": [
+      "qf"
+    ],
+    "input_word": "10110",
+    "transitions": [
+      {
+        "from": "q0",
+        "read": "0",
+        "to": "q0",
+        "write": "1",
+        "move": "R"
+      },
+      {
+        "from": "q0",
+        "read": "1",
+        "to": "q0",
+        "write": "0",
+        "move": "R"
+      },
+      {
+        "from": "q0",
+        "read": "^",
+        "to": "qf",
+        "write": "^",
+        "move": "S"
+      }
+    ]
+  }
+}
